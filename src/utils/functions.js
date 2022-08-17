@@ -126,7 +126,21 @@ export const addBlog = (blog, currentUser,navigate) => {
   navigate("/");
 };
 
+export const useGetData = () => {
+  const [blogList, setBlogList] = useState();
+  useEffect(() => {
+    const db = getDatabase(firebase);
+    const blogRef = ref(db, "blogs/");
+    onValue(blogRef, (snapshot) => {
+      const data = snapshot.val();
+      const blogArray = [];
 
+      for (let id in data) blogArray.push({ id, ...data[id] });
+      setBlogList(blogArray);
+    });
+  }, []);
+  return { blogList };
+};
 
 
 //Bilgi Silme

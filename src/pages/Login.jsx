@@ -42,7 +42,7 @@ const Login = ({ isLogged, setisLogged, currentUser, setCurrentUser }) => {
             <form onSubmit={handleLogin}>
               <div>
                 <input
-                  className="form-control"
+                  className="form-control mb-2"
                   type="email"
                   name="email"
                   id="email"
@@ -53,7 +53,7 @@ const Login = ({ isLogged, setisLogged, currentUser, setCurrentUser }) => {
 
               <div>
                 <input
-                  className="form-control"
+                  className="form-control mb-2"
                   type="password"
                   name="password"
                   id="password"
@@ -67,9 +67,9 @@ const Login = ({ isLogged, setisLogged, currentUser, setCurrentUser }) => {
               ) : (
                 <>
                   <div>
-                    <button
+                    <button 
                       type="submit"
-                      className="text-warning  btn btn-primary"
+                      className="text-warning  btn btn-primary form-control mb-2"
                     >
                       Login
                     </button>
@@ -77,11 +77,11 @@ const Login = ({ isLogged, setisLogged, currentUser, setCurrentUser }) => {
 
                   <div>
                     <button
-                      className="button2"
+                      className="button2 form-control"
                       onClick={handleGoogleSignIn}
                       type="submit"
                     >
-                      With{" "}
+                      With {" "}
                       <span>
                         <img src={googleimg} width={"100px"} alt="" />
                       </span>
